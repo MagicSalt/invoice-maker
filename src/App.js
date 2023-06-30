@@ -9,6 +9,17 @@ import YourDetails from './components/YourDetails';
 
 function App() {
     const [showInvoice, setShowInvoice] = useState(false);
+    const [name, setName] = useState('');
+    const [address, setAddress] = useState('');
+    const [email, setEmail] = useState('');
+    const [phone, setPhone] = useState('');
+    const [clientName, setclientName] = useState('');
+    const [clientAddress, setClientAddress] = useState('');
+    const [invoice, setInvoice] = useState('');
+    const [invoiceNumber, setInvoiceNumber] = useState('');
+    const [invoiceDate, setInvoiceDate] = useState('');
+    const [dateDue, setDateDue] = useState('');
+    const [notes, setNotes] = useState('');
 
     const handlePrint = () => {
         window.print();
@@ -34,6 +45,7 @@ function App() {
                     </div>
                 ) : (
                     <>
+                        {/* name, address, email, phone, client name, client address, invoice number, invoice date, date due, notes */}
                         <div className='flex flex-col justify-center'>
                             <input
                                 type='text'
