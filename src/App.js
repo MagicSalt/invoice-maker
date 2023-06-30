@@ -30,12 +30,12 @@ function App() {
                 {showInvoice ? (
                     <div>
                         <Header handlePrint={handlePrint} />
-                        <YourDetails />
+                        <YourDetails name={name} address={address} email={email} />
                         <ClientDetails />
                         <Dates />
                         <Table />
                         <Notes />
-                        <Footer />
+                        <Footer name={name} email={email} phone={phone} />
                         <button
                             onClick={() => setShowInvoice(false)}
                             className='bg-blue-500 text-white font-bold py-2 px-8 rounded shadow border-2 border-blue-500 hover:bg-transparent hover:text-blue-500 transition-all duration-300'
@@ -47,11 +47,41 @@ function App() {
                     <>
                         {/* name, address, email, phone, client name, client address, invoice number, invoice date, date due, notes */}
                         <div className='flex flex-col justify-center'>
+                            <label htmlFor='name'>Name</label>
                             <input
                                 type='text'
                                 name='text'
-                                id='text'
+                                id='name'
                                 placeholder='Enter your name'
+                                value={name}
+                                onChange={(e) => setName(e.target.value)}
+                            />
+                            <label htmlFor='address'>Address</label>
+                            <input
+                                type='text'
+                                name='text'
+                                id='address'
+                                placeholder='Enter your address'
+                                value={address}
+                                onChange={(e) => setAddress(e.target.value)}
+                            />
+                            <label htmlFor='email'>Email</label>
+                            <input
+                                type='text'
+                                name='text'
+                                id='email'
+                                placeholder='Enter your email'
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                            />
+                            <label htmlFor='phone'>Phone Number</label>
+                            <input
+                                type='text'
+                                name='text'
+                                id='phone'
+                                placeholder='Enter your phone number'
+                                value={phone}
+                                onChange={(e) => setPhone(e.target.value)}
                             />
                             <button
                                 onClick={() => setShowInvoice(true)}
