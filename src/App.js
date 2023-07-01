@@ -13,7 +13,7 @@ function App() {
     const [address, setAddress] = useState('');
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('');
-    const [clientName, setclientName] = useState('');
+    const [clientName, setClientName] = useState('');
     const [clientAddress, setClientAddress] = useState('');
     const [invoice, setInvoice] = useState('');
     const [invoiceNumber, setInvoiceNumber] = useState('');
@@ -59,7 +59,7 @@ function App() {
                             <label htmlFor='address'>Address</label>
                             <input
                                 type='text'
-                                name='text'
+                                name='address'
                                 id='address'
                                 placeholder='Enter your address'
                                 value={address}
@@ -67,8 +67,8 @@ function App() {
                             />
                             <label htmlFor='email'>Email</label>
                             <input
-                                type='text'
-                                name='text'
+                                type='email'
+                                name='email'
                                 id='email'
                                 placeholder='Enter your email'
                                 value={email}
@@ -83,6 +83,61 @@ function App() {
                                 value={phone}
                                 onChange={(e) => setPhone(e.target.value)}
                             />
+                            <label htmlFor='clientName'>Client Name</label>
+                            <input
+                                type='text'
+                                name='clientName'
+                                id='clientName'
+                                placeholder="Enter the client's name"
+                                value={clientName}
+                                onChange={(e) => setClientName(e.target.value)}
+                            />
+                            <label htmlFor='clientAddress'>Client Address</label>
+                            <input
+                                type='text'
+                                name='clientAddress'
+                                id='clientAddress'
+                                placeholder="Enter your client's address"
+                                value={clientAddress}
+                                onChange={(e) => setClientAddress(e.target.value)}
+                            />
+                            <label htmlFor='invoiceNumber'>Invoice Number</label>
+                            <input
+                                type='text'
+                                name='invoiceNumber'
+                                id='invoiceNumber'
+                                placeholder='Invoice number'
+                                value={invoiceNumber}
+                                onChange={(e) => setInvoiceNumber(e.target.value)}
+                            />
+                            <label htmlFor='invoiceDate'>Invoice Date</label>
+                            <input
+                                type='date'
+                                name='invoiceDate'
+                                id='invoiceDate'
+                                placeholder='Invoice date'
+                                value={invoiceDate}
+                                onChange={(e) => setInvoiceDate(e.target.value)}
+                            />
+                            <label htmlFor='dateDue'>Date Due</label>
+                            <input
+                                type='date'
+                                name='dateDue'
+                                id='dateDue'
+                                placeholder='Date Due'
+                                value={dateDue}
+                                onChange={(e) => setDateDue(e.target.value)}
+                            />
+                            <label htmlFor='notes'>Notes</label>
+                            <textarea
+                                name='notes'
+                                id='notes'
+                                cols='30'
+                                rows='10'
+                                placeholder='Additional Notes'
+                                value={notes}
+                                onChange={(e) => setNotes(e.target.value)}
+                            ></textarea>
                             <button
                                 onClick={() => setShowInvoice(true)}
                                 className='bg-blue-500 text-white font-bold py-2 px-8 rounded shadow border-2 border-blue-500 hover:bg-transparent hover:text-blue-500 transition-all duration-300'
