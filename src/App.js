@@ -38,7 +38,7 @@ function App() {
                             dateDue={dateDue}
                         />
                         <Table />
-                        <Notes />
+                        <Notes notes={notes} />
                         <Footer name={name} email={email} phone={phone} />
                         <button
                             onClick={() => setShowInvoice(false)}
