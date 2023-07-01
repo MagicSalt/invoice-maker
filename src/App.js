@@ -31,7 +31,7 @@ function App() {
                     <div>
                         <Header handlePrint={handlePrint} />
                         <YourDetails name={name} address={address} email={email} />
-                        <ClientDetails />
+                        <ClientDetails clientName={clientName} clientAddress={clientAddress} />
                         <Dates />
                         <Table />
                         <Notes />
