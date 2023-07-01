@@ -32,7 +32,11 @@ function App() {
                         <Header handlePrint={handlePrint} />
                         <YourDetails name={name} address={address} email={email} />
                         <ClientDetails clientName={clientName} clientAddress={clientAddress} />
-                        <Dates />
+                        <Dates
+                            invoiceNumber={invoiceNumber}
+                            invoiceDate={invoiceDate}
+                            dateDue={dateDue}
+                        />
                         <Table />
                         <Notes />
                         <Footer name={name} email={email} phone={phone} />
