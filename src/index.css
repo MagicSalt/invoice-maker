@@ -10,8 +10,8 @@ body {
 label {
     margin-bottom: 0.3rem;
     font-size: 1.05rem;
-    font-weight: bold;
-    color: #112827;
+    font-weight: 600;
+    color: #383838;
 }
 
 input,
@@ -19,9 +19,8 @@ textarea {
     background-color: #f1f1f1;
     padding: 0.5rem;
     border-radius: 0.2rem;
-    margin-bottom: 0.8rem;
-    color: #383838;
-    font-weight: 600;
+    margin-bottom: 2rem;
+    color: #616161;
 }
 
 button {
