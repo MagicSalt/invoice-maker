@@ -1,22 +1,22 @@
-export default function Table() {
+export default function Table({ description, quantity, price, amount }) {
     return (
         <>
             <table width='100%'>
                 <thead>
                     <tr className='bg-gray-100 p-1'>
-                        <td>Description</td>
-                        <td>Quantity</td>
-                        <td>Price</td>
-                        <td>Amount</td>
+                        <td className='font-bold'>Description</td>
+                        <td className='font-bold'>Quantity</td>
+                        <td className='font-bold'>Price</td>
+                        <td className='font-bold'>Amount</td>
                     </tr>
                 </thead>
 
                 <tbody>
                     <tr>
-                        <td>Sample description</td>
-                        <td>20</td>
-                        <td>500</td>
-                        <td>10000</td>
+                        <td>{description}</td>
+                        <td>{quantity}</td>
+                        <td>{price}</td>
+                        <td>{amount}</td>
                     </tr>
                 </tbody>
             </table>

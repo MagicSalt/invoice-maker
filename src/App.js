@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 import Header from './components/Header';
 import Notes from './components/Notes';
 import Table from './components/Table';
+import TableForm from './components/TableForm';
 import YourDetails from './components/YourDetails';
 
 function App() {
@@ -20,6 +21,10 @@ function App() {
     const [invoiceDate, setInvoiceDate] = useState('');
     const [dateDue, setDateDue] = useState('');
     const [notes, setNotes] = useState('');
+    const [description, setDescription] = useState('');
+    const [quantity, setQuantity] = useState('');
+    const [price, setPrice] = useState('');
+    const [amount, setAmount] = useState('');
 
     const handlePrint = () => {
         window.print();
@@ -37,7 +42,12 @@ function App() {
                             invoiceDate={invoiceDate}
                             dateDue={dateDue}
                         />
-                        <Table />
+                        <Table
+                            description={description}
+                            quantity={quantity}
+                            price={price}
+                            amount={amount}
+                        />
                         <Notes notes={notes} />
                         <Footer name={name} email={email} phone={phone} />
                         <button
@@ -158,6 +168,21 @@ function App() {
                                     />
                                 </div>
                             </article>
+
+                            {/* Table form goes here */}
+                            <article>
+                                <TableForm
+                                    description={description}
+                                    setDescription={setDescription}
+                                    quantity={quantity}
+                                    setQuantity={setQuantity}
+                                    price={price}
+                                    setPrice={setPrice}
+                                    amount={amount}
+                                    setAmount={setAmount}
+                                />
+                            </article>
+
                             <label htmlFor='notes'>Notes</label>
                             <textarea
                                 name='notes'
