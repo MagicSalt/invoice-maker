@@ -25,6 +25,7 @@ function App() {
     const [quantity, setQuantity] = useState('');
     const [price, setPrice] = useState('');
     const [amount, setAmount] = useState('');
+    const [list, setList] = useState([]);
 
     const handlePrint = () => {
         window.print();
@@ -180,6 +181,8 @@ function App() {
                                     setPrice={setPrice}
                                     amount={amount}
                                     setAmount={setAmount}
+                                    list={list}
+                                    setList={setList}
                                 />
                             </article>
 
