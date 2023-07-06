@@ -38,6 +38,8 @@ export default function TableForm({
         calculateAmount(amount);
     }, [quantity, price, setAmount, amount]);
 
+    const deleteItem = (id) => setList(list.filter((item) => item.id !== id));
+
     return (
         <>
             <form onSubmit={handleSubmit}>
@@ -105,6 +107,9 @@ export default function TableForm({
                                 <td>{quantity}</td>
                                 <td>{price}</td>
                                 <td>{amount}</td>
+                                <td>
+                                    <button onClick={() => deleteItem(id)}>Delete</button>
+                                </td>
                             </tr>
                         </tbody>
                     </React.Fragment>
