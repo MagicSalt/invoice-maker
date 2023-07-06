@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { AiFillDelete } from 'react-icons/ai';
+import { AiOutlineDelete } from 'react-icons/ai';
 import { BiEdit } from 'react-icons/bi';
 import { v4 as uuidv4 } from 'uuid';
 
@@ -136,7 +136,7 @@ export default function TableForm({
                                 <td className='amount'>{amount}</td>
                                 <td>
                                     <button onClick={() => deleteItem(id)}>
-                                        <AiFillDelete className='text-red-500 font-bold text-xl' />
+                                        <AiOutlineDelete className='text-red-500 font-bold text-xl' />
                                     </button>
                                 </td>
                                 <td>
