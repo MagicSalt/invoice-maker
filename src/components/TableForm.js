@@ -14,6 +14,8 @@ export default function TableForm({
     setAmount,
     list,
     setList,
+    total,
+    setTotal,
 }) {
     const [isEditing, setIsEditing] = useState(false);
 
@@ -41,6 +43,18 @@ export default function TableForm({
         };
         calculateAmount(amount);
     }, [quantity, price, setAmount, amount]);
+
+    useEffect(() => {
+        let items = document.querySelectorAll('.amount');
+        let sum = 0;
+
+        for (let i = 0; i < items.length; i++) {
+            if (items[i].className === 'amount') {
+                sum += isNaN(items[i].innerHTML) ? 0 : parseInt(items[i].innerHTML);
+                setTotal(sum);
+            }
+        }
+    });
 
     const editItem = (id) => {
         const editingItem = list.find((item) => item.id === id);
@@ -119,7 +133,7 @@ export default function TableForm({
                                 <td>{description}</td>
                                 <td>{quantity}</td>
                                 <td>{price}</td>
-                                <td>{amount}</td>
+                                <td className='amount'>{amount}</td>
                                 <td>
                                     <button onClick={() => deleteItem(id)}>
                                         <AiFillDelete className='text-red-500 font-bold text-xl' />
@@ -135,6 +149,11 @@ export default function TableForm({
                     </React.Fragment>
                 ))}
             </table>
+            <div>
+                <h2 className='flex items-end justify-end text-gray-800 text-4xl font-bold'>
+                    CAD {total.toLocaleString()}
+                </h2>
+            </div>
         </>
     );
 }
