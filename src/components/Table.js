@@ -1,7 +1,9 @@
-export default function Table({ description, quantity, price, amount }) {
+import React from 'react';
+
+export default function Table({ list }) {
     return (
         <>
-            <table width='100%'>
+            <table width='100%' className='mb-10'>
                 <thead>
                     <tr className='bg-gray-100 p-1'>
                         <td className='font-bold'>Description</td>
@@ -10,15 +12,18 @@ export default function Table({ description, quantity, price, amount }) {
                         <td className='font-bold'>Amount</td>
                     </tr>
                 </thead>
-
-                <tbody>
-                    <tr>
-                        <td>{description}</td>
-                        <td>{quantity}</td>
-                        <td>{price}</td>
-                        <td>{amount}</td>
-                    </tr>
-                </tbody>
+                {list.map(({ id, description, quantity, price, amount }) => (
+                    <React.Fragment key={id}>
+                        <tbody>
+                            <tr>
+                                <td>{description}</td>
+                                <td>{quantity}</td>
+                                <td>{price}</td>
+                                <td>{amount}</td>
+                            </tr>
+                        </tbody>
+                    </React.Fragment>
+                ))}
             </table>
         </>
     );

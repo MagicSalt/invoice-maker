@@ -48,6 +48,8 @@ function App() {
                             quantity={quantity}
                             price={price}
                             amount={amount}
+                            list={list}
+                            setList={setList}
                         />
                         <Notes notes={notes} />
                         <Footer name={name} email={email} phone={phone} />
