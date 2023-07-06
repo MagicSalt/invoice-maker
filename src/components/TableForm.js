@@ -32,6 +32,7 @@ export default function TableForm({
         setPrice('');
         setAmount('');
         setList([...list, newItems]);
+        setIsEditing(false);
     };
 
     useEffect(() => {
@@ -43,6 +44,7 @@ export default function TableForm({
 
     const editItem = (id) => {
         const editingItem = list.find((item) => item.id === id);
+        setList(list.filter((item) => item.id !== id));
         setIsEditing(true);
         setDescription(editingItem.description);
         setQuantity(editingItem.quantity);
@@ -97,7 +99,7 @@ export default function TableForm({
                     type='submit'
                     className='mb-5 bg-blue-500 text-white font-bold py-2 px-8 rounded shadow border-2 border-blue-500 hover:bg-transparent hover:text-blue-500 transition-all duration-300'
                 >
-                    Add Item to Invoice
+                    {isEditing ? 'Edit Item' : 'Add Item'}
                 </button>
             </form>
 
