@@ -1,5 +1,6 @@
-import React from 'react';
-import { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import { AiFillDelete } from 'react-icons/ai';
+import { BiEdit } from 'react-icons/bi';
 import { v4 as uuidv4 } from 'uuid';
 
 export default function TableForm({
@@ -14,6 +15,8 @@ export default function TableForm({
     list,
     setList,
 }) {
+    const [isEditing, setIsEditing] = useState(false);
+
     const handleSubmit = (e) => {
         e.preventDefault();
 
@@ -37,6 +40,14 @@ export default function TableForm({
         };
         calculateAmount(amount);
     }, [quantity, price, setAmount, amount]);
+
+    const editItem = (id) => {
+        const editingItem = list.find((item) => item.id === id);
+        setIsEditing(true);
+        setDescription(editingItem.description);
+        setQuantity(editingItem.quantity);
+        setPrice(editingItem.price);
+    };
 
     const deleteItem = (id) => setList(list.filter((item) => item.id !== id));
 
@@ -108,7 +119,14 @@ export default function TableForm({
                                 <td>{price}</td>
                                 <td>{amount}</td>
                                 <td>
-                                    <button onClick={() => deleteItem(id)}>Delete</button>
+                                    <button onClick={() => deleteItem(id)}>
+                                        <AiFillDelete className='text-red-500 font-bold text-xl' />
+                                    </button>
+                                </td>
+                                <td>
+                                    <button onClick={() => editItem(id)}>
+                                        <BiEdit className='text-green-500 font-bold text-xl' />
+                                    </button>
                                 </td>
                             </tr>
                         </tbody>
